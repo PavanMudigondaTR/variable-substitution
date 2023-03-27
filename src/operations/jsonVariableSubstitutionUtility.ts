@@ -16,11 +16,13 @@ export class JsonSubstitution {
                 if(resultNode.isEnd) {
                     switch(typeof(jsonObject[jsonChild])) {
                         case 'number':
-                            console.log('SubstitutingValueonKeyWithNumber', jsonChild , resultNode.value);
+                            //console.log('SubstitutingValueonKeyWithNumber', jsonChild , resultNode.value);
+                            console.log('SubstitutingValueonKeyWithString' , jsonChild);
                             jsonObject[jsonChild] = !isNaN(resultNode.value) ? Number(resultNode.value): resultNode.value;
                             break;
                         case 'boolean':
-                            console.log('SubstitutingValueonKeyWithBoolean' , jsonChild , resultNode.value);
+                            //console.log('SubstitutingValueonKeyWithBoolean' , jsonChild , resultNode.value);
+                            console.log('SubstitutingValueonKeyWithString' , jsonChild);
                             jsonObject[jsonChild] = (
                                 resultNode.value == 'true' ? true : (resultNode.value == 'false' ? false : resultNode.value)
                             )
@@ -28,7 +30,8 @@ export class JsonSubstitution {
                         case 'object':
                         case null:
                             try {
-                                console.log('SubstitutingValueonKeyWithObject' , jsonChild , resultNode.value);
+                                //console.log('SubstitutingValueonKeyWithObject' , jsonChild , resultNode.value);
+                                console.log('SubstitutingValueonKeyWithString' , jsonChild);
                                 jsonObject[jsonChild] = JSON.parse(resultNode.value);
                             }
                             catch(exception) {
@@ -37,7 +40,8 @@ export class JsonSubstitution {
                             }
                             break;
                         case 'string':
-                            console.log('SubstitutingValueonKeyWithString' , jsonChild , resultNode.value);
+                            //console.log('SubstitutingValueonKeyWithString' , jsonChild , resultNode.value);
+                            console.log('SubstitutingValueonKeyWithString' , jsonChild);
                             jsonObject[jsonChild] = resultNode.value;
                     }
                     isValueChanged = true;
