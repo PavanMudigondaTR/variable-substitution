@@ -1,7 +1,7 @@
 # action.yml
 name: variable-substitution
 author: Pavan Mudigonda
-name: 'Configuration Variable Substitution'
+name: 'Variable Substitution by Pavan Mudigonda'
 description: 'Apply Variable substitution in XML,JSON or YAML files. Github.com/Azure/Actions'
 inputs: 
   files:
